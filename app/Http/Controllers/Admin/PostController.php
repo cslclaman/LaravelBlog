@@ -9,7 +9,13 @@ class PostController extends Controller
 {
     public function form()
     {
-        dd('Abriu form');
+        //Retorna uma view (em "resources/views") - Separa pastas por PONTO em vez de barras
+        return view('admin.post.form');
+    }
+
+    public function save(Request $request)
+    {
+        dd($request->input());
     }
 
 }

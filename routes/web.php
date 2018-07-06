@@ -17,3 +17,7 @@ Route::get('/', function () {
 
 //Toda chamada à URL '/admin/post' vai executar o método "form" da classe (at class) "PostController"
 Route::get('/admin/post', 'Admin\PostController@form');
+
+Route::post('/admin/post/save', 'Admin\PostController@save');
+
+//https://github.com/cslclaman/LaravelBlog.git
