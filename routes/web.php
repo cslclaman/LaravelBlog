@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Toda chamada à URL
+//Toda chamada à URL '/admin/post' vai executar o método "form" da classe (at class) "PostController"
 Route::get('/admin/post', 'Admin\PostController@form');
