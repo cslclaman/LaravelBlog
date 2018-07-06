@@ -16,9 +16,9 @@ class PostController extends Controller
 
     public function save(Request $request)
     {
-        //Cria
+        //Cria post no banco de dados a partir de Model
         $post = Post::create($request->input());
-        dd($post);
+        dd($post->toarray());
     }
 
 }
