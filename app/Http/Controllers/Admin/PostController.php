@@ -23,7 +23,12 @@ class PostController extends Controller
 
     public function list()
     {
-        return view('admin.post.list');
+        $posts = Post::all();
+        //Dá um select no banco e retorna a view informada que acessa 
+        return view('admin.post.list', [
+            //"Crie uma variável interna em que cada um seja um post"
+            'posts' => $posts,
+        ]);
     }
 
 }
