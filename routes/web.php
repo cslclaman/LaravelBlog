@@ -20,4 +20,4 @@ Route::get('/admin/post', 'Admin\PostController@form');
 
 Route::post('/admin/post/save', 'Admin\PostController@save');
 
-//https://github.com/cslclaman/LaravelBlog.git
+Route::get('/admin/posts', 'Admin\PostController@list');

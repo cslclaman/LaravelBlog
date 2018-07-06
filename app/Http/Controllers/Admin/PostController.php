@@ -18,7 +18,12 @@ class PostController extends Controller
     {
         //Cria post no banco de dados a partir de Model
         $post = Post::create($request->input());
-        dd($post->toarray());
+        return redirect(url('/admin/posts'));
+    }
+
+    public function list()
+    {
+        return view('admin.post.list');
     }
 
 }
