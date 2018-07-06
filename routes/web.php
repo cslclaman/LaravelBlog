@@ -16,8 +16,9 @@ Route::get('/', function () {
 });
 
 //Toda chamada à URL '/admin/post' vai executar o método "form" da classe (at class) "PostController"
-Route::get('/admin/post', 'Admin\PostController@form');
+//{id?} significa que ele pode receber um ID.. Ou não. Para ser obrigatório, tire o '?' -> {id}
+Route::get('/admin/post/{id?}', 'Admin\PostController@form');
 
-Route::post('/admin/post/save', 'Admin\PostController@save');
+Route::post('/admin/post/save/{id?}', 'Admin\PostController@save');
 
 Route::get('/admin/posts', 'Admin\PostController@list');
