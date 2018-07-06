@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Post;
 
 class PostController extends Controller
 {
@@ -15,7 +16,9 @@ class PostController extends Controller
 
     public function save(Request $request)
     {
-        dd($request->input());
+        //Cria
+        $post = Post::create($request->input());
+        dd($post);
     }
 
 }
