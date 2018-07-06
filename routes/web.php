@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Toda chamada à URL
+Route::get('/admin/post', 'Admin\PostController@form');
