@@ -1,7 +1,7 @@
 @extends('layout.admin')
 
 @section('content')
-<table>
+<table class='table'>
     <tr>
         <th>ID</th>
         <th>Título</th>
@@ -13,13 +13,13 @@
         <td>{{ $post->id }}</td>
         <td>{{ $post->titulo }}</td>
         <td>{{ $post->conteudo }}</td>
-        <td><a href="{{url('/admin/post/' . $post->id)}}"><button>Editar</button></a></td>
-        <td><button onclick="confirmaDelete('{{url('/admin/post/' . $post->id . '/delete')}}')">Remover</button></td>
+        <td><a href="{{url('/admin/post/' . $post->id)}}"><button class='btn btn-primary'>Editar</button></a>
+        <button class='btn btn-danger' onclick="confirmaDelete('{{url('/admin/post/' . $post->id . '/delete')}}')">Remover</button></td>
     </tr>
     @endforeach
 </table>
 
-<a href="{{ url('/admin/post/') }}"><button>Criar novo post</button></a>
+<a href="{{ url('/admin/post/') }}"><button class='btn'>Criar novo post</button></a>
 
 <script>
 function confirmaDelete(url) {
