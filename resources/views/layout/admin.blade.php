@@ -18,7 +18,7 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
         @if(auth()->check())
-        <ul class="navbar navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right">
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} <span class="caret"></span>
