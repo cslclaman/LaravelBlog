@@ -17,8 +17,9 @@ Route::get('/', function () {
 
 //Agrupa rotas com algo em comum
 Route::group([
-    'prefix' => 'admin',
-    'namespace' => 'Admin',
+    'prefix' => 'admin', //Todo URL começa com 'admin'
+    'namespace' => 'Admin', //Todos os controllers estão na pasta (namespace) 'Admin'
+    'middleware' => 'auth', //Exige autenticação para acessar essas rotas (o Laravel faz!)
 ], function () {
 
     //Toda chamada à URL '/admin/post' vai executar o método "form" da classe (at class) "PostController"
