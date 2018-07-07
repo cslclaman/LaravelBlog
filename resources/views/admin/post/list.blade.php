@@ -19,6 +19,8 @@
     @endforeach
 </table>
 
+<a href="{{ url('/admin/post/') }}"><button>Criar novo post</button></a>
+
 <script>
 function confirmaDelete(url) {
     if ( confirm('Deseja remover esse post?') ){
