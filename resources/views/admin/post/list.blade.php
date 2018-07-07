@@ -14,8 +14,17 @@
         <td>{{ $post->titulo }}</td>
         <td>{{ $post->conteudo }}</td>
         <td><a href="{{url('/admin/post/' . $post->id)}}"><button>Editar</button></a></td>
-        <td><a href="{{url('/admin/post/' . $post->id . '/delete')}}"><button>Remover</button></a></td>
+        <td><button onclick="confirmaDelete('{{url('/admin/post/' . $post->id . '/delete')}}')">Remover</button></td>
     </tr>
     @endforeach
 </table>
+
+<script>
+function confirmaDelete(url) {
+    if ( confirm('Deseja remover esse post?') ){
+        location.href = url;
+    }
+}
+</script>
+
 @endsection
