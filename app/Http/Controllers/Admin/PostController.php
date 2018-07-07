@@ -55,4 +55,21 @@ class PostController extends Controller
         ]);
     }
 
+    public function delete($id)
+    {
+        try {
+            $post = Post::findOrFail($id);
+        } catch (\Exception $e) {
+            //with: guarda na seção do usuário atual do servidor uma mensagem com a chave informada (chave,mensagem)
+            return back()->with('message', 'Post '.$id.' não encontrado para exclusão');
+        }
+        
+        if ($post->delete()) {
+            //poderia ser 'return back();' para retornar à tela anterior
+            return redirect('/admin/posts');
+        } else {
+            return back()->with('message', 'Erro ao excluir o post '.$id);
+        }
+    }
+
 }

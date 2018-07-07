@@ -22,3 +22,5 @@ Route::get('/admin/post/{id?}', 'Admin\PostController@form');
 Route::post('/admin/post/save/{id?}', 'Admin\PostController@save');
 
 Route::get('/admin/posts', 'Admin\PostController@list');
+
+Route::get('/admin/post/{id}/delete', 'Admin\PostController@delete');

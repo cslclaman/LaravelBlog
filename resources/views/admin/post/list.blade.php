@@ -13,9 +13,8 @@
         <td>{{ $post->id }}</td>
         <td>{{ $post->titulo }}</td>
         <td>{{ $post->conteudo }}</td>
-        <td>
-            <a href="{{url('/admin/post/' . $post->id)}}"><button>Editar</button></a>
-        </td>
+        <td><a href="{{url('/admin/post/' . $post->id)}}"><button>Editar</button></a></td>
+        <td><a href="{{url('/admin/post/' . $post->id . '/delete')}}"><button>Remover</button></a></td>
     </tr>
     @endforeach
 </table>
