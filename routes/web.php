@@ -28,11 +28,13 @@ Route::group([
 
     Route::post('/post/save/{id?}', 'PostController@save');
 
-    Route::get('/posts', 'PostController@list');
+    // ->name() = nomeia uma rota com um apelido bonitinho
+    Route::get('/posts', 'PostController@list')->name('home');
 
     Route::get('/post/{id}/delete', 'PostController@delete');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
