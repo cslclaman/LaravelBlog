@@ -18,15 +18,16 @@ Route::get('/', function () {
 //Agrupa rotas com algo em comum
 Route::group([
     'prefix' => 'admin',
+    'namespace' => 'Admin',
 ], function () {
 
     //Toda chamada à URL '/admin/post' vai executar o método "form" da classe (at class) "PostController"
     //{id?} significa que ele pode receber um ID.. Ou não. Para ser obrigatório, tire o '?' -> {id}
-    Route::get('/post/{id?}', 'Admin\PostController@form');
+    Route::get('/post/{id?}', 'PostController@form');
 
-    Route::post('/post/save/{id?}', 'Admin\PostController@save');
+    Route::post('/post/save/{id?}', 'PostController@save');
 
-    Route::get('/posts', 'Admin\PostController@list');
+    Route::get('/posts', 'PostController@list');
 
-    Route::get('/post/{id}/delete', 'Admin\PostController@delete');
+    Route::get('/post/{id}/delete', 'PostController@delete');
 });
