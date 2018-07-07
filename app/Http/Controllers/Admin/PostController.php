@@ -47,7 +47,12 @@ class PostController extends Controller
 
     public function list()
     {
+        //Use a função abaixo para retornar ATÉ os que foram apagados (usando SoftDelete)
+        //Se quiser, dá pra filtrar no front-end verificando se o campo 'deleted_at' == null
+        //$posts = Post::withTrashed()->get();
+        
         $posts = Post::all();
+
         //Dá um select no banco e retorna a view informada que acessa 
         return view('admin.post.list', [
             //"Crie uma variável interna em que cada um seja um post"
