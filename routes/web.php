@@ -15,12 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Toda chamada à URL '/admin/post' vai executar o método "form" da classe (at class) "PostController"
-//{id?} significa que ele pode receber um ID.. Ou não. Para ser obrigatório, tire o '?' -> {id}
-Route::get('/admin/post/{id?}', 'Admin\PostController@form');
+//Agrupa rotas com algo em comum
+Route::group([
+    'prefix' => 'admin',
+], function () {
 
-Route::post('/admin/post/save/{id?}', 'Admin\PostController@save');
+    //Toda chamada à URL '/admin/post' vai executar o método "form" da classe (at class) "PostController"
+    //{id?} significa que ele pode receber um ID.. Ou não. Para ser obrigatório, tire o '?' -> {id}
+    Route::get('/post/{id?}', 'Admin\PostController@form');
 
-Route::get('/admin/posts', 'Admin\PostController@list');
+    Route::post('/post/save/{id?}', 'Admin\PostController@save');
 
-Route::get('/admin/post/{id}/delete', 'Admin\PostController@delete');
+    Route::get('/posts', 'Admin\PostController@list');
+
+    Route::get('/post/{id}/delete', 'Admin\PostController@delete');
+});
