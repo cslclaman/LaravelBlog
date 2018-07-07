@@ -37,6 +37,10 @@ class PostController extends Controller
             //back() - tela anterior que o usuário estava
             //withInput() - preenche tela com conteúdo que possuía
             return back()->withInput();
+
+            //Adicionada no front-end: old()
+            //withInput() retorna valores originais
+            //old('chave', valorSeNaoTiverConteudoNaChave) retorna valor alterado
         }
 
     }

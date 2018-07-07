@@ -5,11 +5,11 @@
     @csrf
     <div>
         <label for="titulo">Título do post</label>
-        <input type="text" name="titulo" value="{{ $post->titulo }}">
+        <input type="text" name="titulo" value="{{ old('titulo', $post->titulo) }}">
     </div>
     <div>
         <label for="conteudo">Conteúdo do post</label>
-        <textarea name="conteudo" id="" cols="30" rows="10">{{ $post->conteudo }}</textarea>
+        <textarea name="conteudo" id="" cols="30" rows="10">{{ old('conteudo', $post->conteudo) }}</textarea>
     </div>
     <button>Salvar</button>
 </form>
